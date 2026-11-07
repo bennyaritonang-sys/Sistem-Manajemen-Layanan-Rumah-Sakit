@@ -10,4 +10,6 @@ Jalankan perintah compile: javac *.java
 Jalankan program: java Main
 
 Screenshot Output Program
-Screenshot 2026-11-07 220538 Screenshot 2026-11-07 221136
+<img width="1268" height="223" alt="Screenshot 2026-11-07 221136" src="https://github.com/user-attachments/assets/f7ae9335-69be-455e-9e19-6da68cf64f86" />
+<img width="1272" height="523" alt="Screenshot 2026-11-07 220538" src="https://github.com/user-attachments/assets/c11959a0-4bad-4496-8b46-ed522a7656ca" />
+
