@@ -1,3 +1,4 @@
+
 public class Main {
 
     public static void main(String[] args) {
@@ -24,38 +25,59 @@ public class Main {
         System.out.println("===== PASIEN RAWAT JALAN =====");
         pasien1.tampilkanInfo();
 
-        // Memproses layanan rawat jalan
         pasien1.prosesLayanan();
         pasien1.periksaPasien();
-        System.out.println("Status setelah layanan: " + pasien1.getStatus());
+
+        System.out.println("Status setelah layanan: "
+                + pasien1.getStatus());
 
         // Menampilkan informasi pasien rawat inap
         System.out.println("\n===== PASIEN RAWAT INAP =====");
         pasien2.tampilkanInfo();
 
-        // Memproses layanan rawat inap
         pasien2.prosesLayanan();
         pasien2.periksaPasien();
-        System.out.println("Status setelah layanan: " + pasien2.getStatus());
+
+        System.out.println("Status setelah layanan: "
+                + pasien2.getStatus());
 
         // Polimorfisme menggunakan interface
         System.out.println("\n===== POLIMORFISME INTERFACE =====");
 
-        BisaDiperiksa pemeriksaan1 = pasien1;
-        BisaDiperiksa pemeriksaan2 = pasien2;
+        BisaDiperiksa pemeriksaan1 =
+                new PasienRawatJalan(
+                        "RM003", "Budi", 21,
+                        "Dr. Ani", 120000
+                );
+
+        BisaDiperiksa pemeriksaan2 =
+                new PasienRawatInap(
+                        "RM004", "Rina", 23,
+                        2, 200000
+                );
 
         pemeriksaan1.periksaPasien();
         pemeriksaan2.periksaPasien();
 
-        // Interface untuk menghitung biaya
-        BisaDibayar pembayaran1 = pasien1;
-        BisaDibayar pembayaran2 = pasien2;
+        // Menghitung biaya menggunakan interface
+        System.out.println("\n===== PERHITUNGAN BIAYA =====");
 
-        System.out.println("\nBiaya Rawat Jalan: Rp" +
-                pembayaran1.hitungBiaya());
+        BisaDibayar pembayaran1 =
+                new PasienRawatJalan(
+                        "RM005", "Doni", 22,
+                        "Dr. Budi", 100000
+                );
 
-        System.out.println("Biaya Rawat Inap: Rp" +
-                pembayaran2.hitungBiaya());
+        BisaDibayar pembayaran2 =
+                new PasienRawatInap(
+                        "RM006", "Lina", 24,
+                        3, 250000
+                );
+
+        System.out.println("Biaya Rawat Jalan: Rp"
+                + pembayaran1.hitungBiaya());
+
+        System.out.println("Biaya Rawat Inap: Rp"
+                + pembayaran2.hitungBiaya());
     }
 }
-
